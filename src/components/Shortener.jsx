@@ -5,6 +5,7 @@ import CopyBtn from "../ui/CopyBtn";
 
 const urlResults = [];
 
+// For testing UI
 // const urlResults = [
 //   {
 //     originalURL: "https://www.google.com",
@@ -33,19 +34,16 @@ export default function Shortener() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log("Form Data : ", data);
-
-    // FIX THIS LOGIC OF ISLOADING STATE HERE AND IN SERVICES AS WELL.
-    // try {
-    //   setIsloading(true);
-    //   const shortenedUrl = await getShortURL(data.url);
-    //   if (!shortenedUrl) return;
-    //   urlResults.push({ originalURL: data.url, shortURL: shortenedUrl });
-    //   console.log("urlresutls :", urlResults);
-    // } catch (error) {
-    //   setIsloading(false);
-    //   console.log("Error : ", error.message);
-    // }
+    try {
+      setIsLoading(true);
+      const shortenedURL =
+        (await getShortURL(data.url)) || "Cannot be shortened. Sorry !";
+      urlResults.unshift({ originalURL: data.url, shortURL: shortenedURL });
+    } catch (error) {
+      console.log("Error occured *: ", error.message);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (

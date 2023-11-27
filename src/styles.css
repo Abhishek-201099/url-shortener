@@ -3,7 +3,6 @@
 :root {
   --color-primary-1: hsl(180, 66%, 49%);
   --color-primary-2: hsl(257, 27%, 26%);
-  --color-primary-shade-1: #55d9d9;
 
   --color-secondary: hsl(0, 87%, 67%);
 
@@ -125,7 +124,7 @@ body {
 
 .section-header .auth .auth-signup:hover,
 .section-header .auth .auth-signup:active {
-  background-color: var(--color-primary-shade-1);
+  background-color: var(--color-primary-2);
 }
 
 /*********************************/
@@ -269,7 +268,7 @@ body {
 }
 
 .hero-text-box .hero-cta-btn:hover {
-  background-color: var(--color-primary-shade-1);
+  background-color: var(--color-primary-2);
 }
 
 .section-hero .hero .hero-img-box {
@@ -295,7 +294,6 @@ body {
 
 .shortener-container {
   width: 80%;
-  /* background-color: aqua; */
   margin: 0 auto;
 
   display: flex;
@@ -357,14 +355,11 @@ body {
 }
 
 .shortener-form div button:hover {
-  background-color: var(--color-primary-shade-1);
+  background-color: var(--color-primary-2);
 }
 
 .shortener-form p {
   color: var(--color-secondary);
-}
-
-.shortener-form p {
   font-size: 1.4rem;
   font-style: italic;
 }
@@ -462,6 +457,18 @@ body {
   .section-hero .hero .hero-img-box {
     width: 45%;
   }
+
+  .shortener-form {
+    padding: 4rem 3rem 3rem 3rem;
+  }
+
+  .shortener-form div input {
+    font-size: 1.8rem;
+  }
+
+  .shortener-form div button {
+    font-size: 1.6rem;
+  }
 }
 
 /* xl */
@@ -493,6 +500,33 @@ body {
 
   .section-hero .hero .hero-img-box {
     padding-top: 16rem;
+  }
+
+  .shortener-container {
+    width: 90%;
+  }
+
+  .shortener-form {
+    margin-top: -6rem;
+  }
+
+  .shortener-form div input {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
+
+  .shortener-form div button {
+    font-size: 1.3rem;
+  }
+
+  .shortener-result {
+    font-size: 1.4rem;
+    width: 90%;
+    padding: 1rem 2rem;
+  }
+
+  .shortener-result .shortener-copy-btn {
+    font-size: 1.6rem;
   }
 }
 
@@ -543,6 +577,28 @@ body {
     padding-top: 12rem;
     padding-bottom: 4rem;
   }
+
+  .shortener-form {
+    width: 90%;
+    padding: 3rem 3rem 2rem 3rem;
+    margin-top: -5rem;
+  }
+
+  .shortener-form p {
+    font-size: 1.3rem;
+  }
+
+  .shortener-form div button {
+    font-size: 1.4rem;
+  }
+
+  .shortener-results {
+    width: 90%;
+  }
+
+  .shortener-result .shortener-copy-btn {
+    font-size: 1.4rem;
+  }
 }
 
 /* md */
@@ -588,6 +644,25 @@ body {
 
   .hero-text-box .hero-description {
     margin-bottom: 6rem;
+  }
+
+  .shortener-form {
+    width: 95%;
+    margin-top: -4.5rem;
+  }
+
+  .shortener-form div input {
+    font-size: 1.2rem;
+  }
+
+  .shortener-form div button,
+  .shortener-result,
+  .shortener-result .shortener-copy-btn {
+    font-size: 1.3rem;
+  }
+
+  .shortener-results {
+    width: 95%;
   }
 }
 
@@ -654,6 +729,60 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
   }
+
+  .shortener-form {
+    width: 100%;
+    margin-top: -8rem;
+  }
+
+  .shortener-form div {
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    margin-bottom: 0rem;
+  }
+
+  .shortener-form div input {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+
+  .shortener-form div button {
+    padding: 1.2rem 2rem;
+    width: 35%;
+    font-size: 1.6rem;
+  }
+
+  .shortener-form p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .shortener-results {
+    gap: 3rem;
+  }
+
+  .shortener-result {
+    font-size: 1.6rem;
+    padding: 2rem 1rem;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .shortener-result .shortener-original-url {
+    padding-bottom: 2rem;
+    align-self: stretch;
+    border-bottom: 1px solid var(--color-neutral-1);
+  }
+
+  .shortener-result .shortener-copy-btn {
+    align-self: stretch;
+    font-size: 1.8rem;
+    padding: 1.4rem;
+  }
 }
 
 /* xs */
@@ -661,7 +790,6 @@ body {
   .container {
     width: 100%;
   }
-  /* / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74  */
 
   .hero-text-box .hero-heading {
     font-size: 4.4rem;
@@ -677,5 +805,23 @@ body {
 
   .section-hero .hero .hero-img-box img {
     transform: translateX(15%);
+  }
+
+  .shortener-container {
+    width: 100%;
+  }
+
+  .shortener-form div input {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .shortener-form div button {
+    width: 40%;
+    font-size: 1.6rem;
+  }
+
+  .shortener-form p {
+    margin-bottom: 2rem;
   }
 }
