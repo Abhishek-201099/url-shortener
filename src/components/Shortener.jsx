@@ -3,27 +3,27 @@ import { getShortURL } from "../services/getShortURL";
 import { useState } from "react";
 import CopyBtn from "../ui/CopyBtn";
 
-const urlResults = [];
+// const urlResults = [];
 
 // For testing UI
-// const urlResults = [
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortone",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shorttwo",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortthree",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortfour",
-//   },
-// ];
+const urlResults = [
+  {
+    originalURL: "https://www.google.com",
+    shortURL: "https://shortone",
+  },
+  {
+    originalURL: "https://www.google.com",
+    shortURL: "https://shorttwo",
+  },
+  {
+    originalURL: "https://www.google.com",
+    shortURL: "https://shortthree",
+  },
+  {
+    originalURL: "https://www.google.com",
+    shortURL: "https://shortfour",
+  },
+];
 
 export default function Shortener() {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,16 +34,16 @@ export default function Shortener() {
   } = useForm();
 
   async function onSubmit(data) {
-    try {
-      setIsLoading(true);
-      const shortenedURL =
-        (await getShortURL(data.url)) || "Cannot be shortened. Sorry !";
-      urlResults.unshift({ originalURL: data.url, shortURL: shortenedURL });
-    } catch (error) {
-      console.log("Error occured *: ", error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    // try {
+    //   setIsLoading(true);
+    //   const shortenedURL =
+    //     (await getShortURL(data.url)) || "Cannot be shortened. Sorry !";
+    //   urlResults.unshift({ originalURL: data.url, shortURL: shortenedURL });
+    // } catch (error) {
+    //   console.log("Error occured *: ", error.message);
+    // } finally {
+    //   setIsLoading(false);
+    // }
   }
 
   return (
