@@ -1,3 +1,4 @@
+import Cta from "./components/Cta";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Shortener from "./components/Shortener";
@@ -11,6 +12,7 @@ export default function App() {
         <Hero />
         <Shortener />
         <Stats />
+        <Cta />
       </main>
     </div>
   );

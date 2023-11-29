@@ -514,6 +514,51 @@ body {
 
 /*********************************/
 /*********************************/
+/* SECTION CTA */
+/*********************************/
+
+.section-cta {
+  background-image: url("/bg-boost-desktop.svg");
+  background-color: var(--color-primary-2);
+  background-size: cover;
+}
+
+.cta-container {
+  width: 40%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.cta-container .cta-heading {
+  font-size: 3.6rem;
+  color: #fff;
+}
+
+.cta-container .cta-btn {
+  border: none;
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  background-color: var(--color-primary-1);
+  border-radius: 2rem;
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.cta-container .cta-btn:hover {
+  background-color: var(--color-primary-2);
+}
+
+/*********************************/
+
+/*********************************/
+/*********************************/
 /* MEDIA QUERIES */
 /*********************************/
 
@@ -655,22 +700,12 @@ body {
   .stats-item .stats-item-description {
     font-size: 1.4rem;
   }
+
+  .cta-container {
+    width: 50%;
+  }
 }
 
-/*
-.section-stats
-.stats-header
-
-
-.stats-item
-.stats-item:nth-child(3
-.stats-item:last-child
-
-
-.stats-items .stats-bars 
- */
-
-/* MAKE RESPONSIVE FROM HERE ONWARDS */
 /* lg */
 @media (max-width: 1024px) {
   .container {
@@ -777,6 +812,18 @@ body {
   .stats-items .stats-bars {
     height: 0.8rem;
     transform: translateY(3rem);
+  }
+
+  .cta-container {
+    width: 70%;
+  }
+
+  .cta-container .cta-heading {
+    font-size: 3rem;
+  }
+
+  .cta-container .cta-btn {
+    font-size: 1.8rem;
   }
 }
 
@@ -889,9 +936,15 @@ body {
   .stats-item:last-child {
     transform: translateY(4rem);
   }
-}
 
-/* FIX RESPONSIVENESS FROM HERE ONWARDS */
+  .cta-container .cta-heading {
+    font-size: 2.4rem;
+  }
+
+  .cta-container .cta-btn {
+    font-size: 1.6rem;
+  }
+}
 
 /* sm */
 @media (max-width: 640px) {
@@ -1030,6 +1083,11 @@ body {
   .stats-item .stats-item-heading {
     margin-bottom: 2rem;
   }
+
+  .section-cta {
+    background-image: url("/bg-boost-mobile.svg");
+    background-size: cover;
+  }
 }
 
 /* xs */
@@ -1094,5 +1152,13 @@ body {
 
   .stats-item .stats-item-description {
     font-size: 1.6rem;
+  }
+
+  .section-cta {
+    padding: 1rem 0;
+  }
+
+  .cta-container {
+    width: 100%;
   }
 }
