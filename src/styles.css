@@ -36,7 +36,6 @@ body {
 }
 
 .container {
-  /* background-color: #eee; */
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
@@ -220,10 +219,6 @@ body {
 /*********************************/
 /* SECTION HERO */
 /*********************************/
-
-/* .section-hero {
-  background-color: #eee;
-} */
 
 .section-hero .hero {
   width: 90%;
@@ -430,7 +425,6 @@ body {
 }
 
 .stats-header {
-  /* background-color: red; */
   width: 60%;
   margin: 0 auto;
   padding: 4rem 0rem;
@@ -440,7 +434,7 @@ body {
   align-items: center;
   gap: 4rem;
 }
-/* / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74  */
+
 .stats-header h2 {
   font-size: 4.4rem;
   color: var(--color-primary-2);
@@ -456,14 +450,12 @@ body {
 }
 
 .stats-items {
-  /* background-color: bisque; */
   background-color: var(--color-neutral-5);
   padding: 8rem 8rem 16rem 8rem;
   width: 85%;
   margin: 0 auto;
 
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .stats-item {
@@ -1231,23 +1223,6 @@ body {
     width: 100%;
   }
 }
-
-/*
-
-
-.footer-logo-container img
-
-
-
-.footer-links-container .footer-links
-.footer-links .footer-link a:link,
-.footer-links .footer-link a:visited 
-.footer-links .footer-link a:hover,
-.footer-links .footer-link a:active
-.footer-social-container .social-links
-.social-links a img
-.social-links a img:hover 
- */
 
 /* xs */
 @media (max-width: 475px) {

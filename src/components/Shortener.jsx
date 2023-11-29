@@ -2,30 +2,11 @@ import { useForm } from "react-hook-form";
 import { getShortURL } from "../services/getShortURL";
 import { useState } from "react";
 import CopyBtn from "../ui/CopyBtn";
-
-const urlResults = [];
-
-// For testing UI
-// const urlResults = [
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortone",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shorttwo",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortthree",
-//   },
-//   {
-//     originalURL: "https://www.google.com",
-//     shortURL: "https://shortfour",
-//   },
-// ];
+import { useLocalStorageState } from "../hooks/useLocalStorage";
+import { truncateText } from "../helpers/helpers";
 
 export default function Shortener() {
+  const [shortenURLS, setShortenURLS] = useLocalStorageState([], "shortURLs");
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -38,7 +19,8 @@ export default function Shortener() {
       setIsLoading(true);
       const shortenedURL =
         (await getShortURL(data.url)) || "Cannot be shortened. Sorry !";
-      urlResults.unshift({ originalURL: data.url, shortURL: shortenedURL });
+      shortenURLS.unshift({ originalURL: data.url, shortURL: shortenedURL });
+      setShortenURLS([...shortenURLS]);
     } catch (error) {
       console.log("Error occured *: ", error.message);
     } finally {
@@ -69,12 +51,12 @@ export default function Shortener() {
       </div>
 
       <div className="shortener-results">
-        {urlResults.length
-          ? urlResults.map((shortUrl, index) => {
+        {shortenURLS.length
+          ? shortenURLS.map((shortUrl, index) => {
               return (
                 <div className="shortener-result" key={index}>
                   <p className="shortener-original-url">
-                    {shortUrl.originalURL}
+                    {truncateText(shortUrl.originalURL, 40)}
                   </p>
                   <p className="shortener-result-url">{shortUrl.shortURL}</p>
                   <CopyBtn
